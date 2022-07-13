@@ -1,6 +1,7 @@
 import Spendings from "./Spendings";
 import Slider from "./Chart/Slider";
 import Total from './total/total'
+import Seperator from '../Seperator'
 function Card(){
     const cost = [
         {
@@ -35,13 +36,14 @@ function Card(){
             
         
     return(
-        <div className="flex flex-col shadow-md w-[30rem] bg-white rounded-xl mt-4">
+        <div className="flex flex-col shadow-md w-[30rem] bg-white rounded-xl mt-4 pb-8">
             <Spendings />
-            <div className="grid grid-cols-7 p-5 gap-7">
+            <div className="grid grid-cols-7 p-5 gap-5">
                 {cost.map((Cost) => 
-                    <Slider Cost={Cost} mostExpensive={mostExpensive}/>
+                    <Slider Cost={Cost} mostExpensive={mostExpensive} isExpensive={Cost.Cost == mostExpensive ? true : false}/>
                 )}
             </div>
+            <Seperator />
             <Total />
         </div>
     )

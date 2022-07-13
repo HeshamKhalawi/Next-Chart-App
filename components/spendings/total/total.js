@@ -2,7 +2,7 @@ import TotalCurrent from './TotalCurrent'
 import TotalPrevious from './TotalPrevious'
 function total(){
     return(
-        <div>
+        <div className='flex flex-row justify-between'>
             <TotalCurrent />
             <TotalPrevious />
         </div>

@@ -1,5 +1,4 @@
 import BalanceCard from '../components/balance/Card'
-import Spendings from '../components/spendings/Spendings'
 import SepndingsCard from '../components/spendings/Card'
 
 export default function Home() {
