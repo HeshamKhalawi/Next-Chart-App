@@ -1,15 +1,14 @@
 import { useState } from "react";
 function Slider({Cost, mostExpensive}){
     const[hover, setHover] = useState(false);
-    let height = (Cost.Cost * 10)/mostExpensive;
-    console.log(height);
+    let barHeight = (Cost.Cost * 10)/mostExpensive;
+    barHeight = barHeight.toPrecision(1);
+    let containerHeight = 10 - barHeight;
     return(
-        <div className="flex flex-col items-center">
-            <div className={hover ? "":`bg-[#EC775F] w-[3rem] rounded-lg ` + "h-[" + height + "rem]"}>
-
+        <div className={"flex flex-col items-center"} style={{marginTop: containerHeight + "rem"}}>
+            <div className={`bg-[#EC775F] w-[2.7rem] rounded-lg items-stretch`} style={{height: barHeight + "rem"}}>
             </div>
-            <div className="pt-2 font-sans text-[18px] font-normal mb-2 text-[#93867B]">{Cost.Day}</div>
-           
+            <div className="pt-2 font-sans text-sm  font-normal mb-2 text-[#93867B]">{Cost.Day}</div>    
         </div>
     )
 }
